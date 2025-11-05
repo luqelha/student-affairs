@@ -76,48 +76,36 @@ Follow these steps to set up the project locally for development and testing.
    cd student-affairs
    ```
 2. **Install dependencies via Composer:**
-
-```bash
-composer install
-```
-
+    ```bash
+    composer install
+    ```
 3. **Copy environment file and configure database:**
-
-```bash
-cp .env.example .env
-```
-
-Lalu isi konfigurasi database kamu di file .env, misalnya:
-
-```env
-DB_DATABASE=student_affairs
-DB_USERNAME=root
-DB_PASSWORD=
-```
-
+    ```bash
+    cp .env.example .env
+    ```
+    Then fill in your database configuration in the .env file, for example:
+    
+    ```env
+    DB_DATABASE=student_affairs
+    DB_USERNAME=root
+    DB_PASSWORD=
+    ```
 4. **Generate application key:**
-
-```bash
-php artisan key:generate
-```
-
+    ```bash
+    php artisan key:generate
+    ```
 5. **Run migrations and seeders:**
-
-```bash
-php artisan migrate --seed
-```
-
+    ```bash
+    php artisan migrate --seed
+    ```
 6. **Run the application:**
-
-```bash
-php artisan serve
-```
-
+    ```bash
+    php artisan serve
+    ```
 7. **Access Application in Browser:**
-
-```bash
-http://127.0.0.1:8000.
-```
+    ```bash
+    http://127.0.0.1:8000.
+    ```
 
 ## 📦 Dependencies
 
@@ -161,4 +149,4 @@ If you find a bug or want to improve the system, feel free to open an issue or s
 
 ## 📜 License
 
-Distributed under the MIT License.
+Distributed under the MIT License. See [LICENSE](https://github.com/luqelha/student-affairs/tree/main?tab=MIT-1-ov-file) for more information.
