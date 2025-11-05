@@ -134,4 +134,4 @@ If you find a bug or want to improve the system, feel free to open an issue or s
 
 ## 📜 License
 
-Distributed under the MIT License. See [LICENSE](https://github.com/luqelha/student-affairs/tree/main?tab=MIT-1-ov-file) for more information.
+Distributed under the MIT License. See [LICENSE](https://github.com/luqelha/student-affairs/blob/main/LICENSE) for more information.
