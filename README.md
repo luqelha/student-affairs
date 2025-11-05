@@ -1,61 +1,164 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
-
 <p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
+  <img src="https://raw.githubusercontent.com/luqelha/student-affairs/main/public/images/student-affairs.png" 
+       alt="Student Affairs Logo" 
+       style="max-width:100%; height:auto;"/>
+       &nbsp;
 </p>
 
-## About Laravel
+<p align="center">
+  <a href="https://laravel.com/" style="text-decoration:none;">
+    <img src="https://img.shields.io/badge/Laravel-FF2D20?style=for-the-badge&logo=laravel&logoColor=white"/>
+  </a>
+  &nbsp;
+  <a href="https://developer.mozilla.org/en-US/docs/Web/HTML" style="text-decoration:none;">
+    <img src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white"/>
+  </a>
+  &nbsp;
+  <a href="https://developer.mozilla.org/en-US/docs/Web/CSS" style="text-decoration:none;">
+    <img src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white"/>
+  </a>
+  &nbsp;
+  <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" style="text-decoration:none;">
+    <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black"/>
+  </a>
+  &nbsp;
+  <a href="https://www.php.net/" style="text-decoration:none;">
+    <img src="https://img.shields.io/badge/PHP-777BB4?style=for-the-badge&logo=php&logoColor=white"/>
+  </a>
+  &nbsp;
+  <a href="https://www.mysql.com/" style="text-decoration:none;">
+    <img src="https://img.shields.io/badge/MySQL-4479A1?style=for-the-badge&logo=mysql&logoColor=white"/>
+  </a>
+</p>
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+## 🎓 Student-Affairs Dashboard
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+> [!IMPORTANT]
+> A comprehensive web-based dashboard for managing student activities, achievements, and scholarships.  
+> Built with **Laravel 12**, this system provides role-based access for **Admins** and **Users (students)** to manage data efficiently.
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+## 🎥 Demo
 
-## Learning Laravel
+<p align="center">
+  <img src="https://raw.githubusercontent.com/luqelha/student-affairs/main/public/images/demo.gif" alt="Demo Aplikasi" style="max-width:100%; height:auto;"/>
+</p>
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+## ✨ Features
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+- **👥 Role Management:** Separate login and dashboard views for **Admin** and **User** roles.
+- **🎓 Scholarship Management:** Admins can manage, approve, and monitor student scholarship applications.
+- **🏆 Achievements:** Record and track student academic and non-academic achievements.
+- **🎯 Student Activities (UKM):** Manage student organizations and extracurricular participation.
+- **📄 Export & Reporting:**
+  - Export data to **PDF** and **Excel** using `barryvdh/laravel-dompdf` and `maatwebsite/excel`.
+  - Supports bulk data import/export via **PhpSpreadsheet**.
+- **📊 Dashboard Analytics:** Admin overview of student statistics and performance.
+- **🔒 Authentication System:** Secure login, registration, and role-based middleware using Laravel Breeze/Fortify (if included).
+- **🧩 Seeders & Factories:** Auto-generate dummy data using **FakerPHP** for testing and demos.
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+## 🚀 Getting Started
 
-## Laravel Sponsors
+Follow these steps to set up the project locally for development and testing.
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+### 🧱 Prerequisites
 
-### Premium Partners
+- **PHP >= 8.2**
+- **Composer** installed
+- **MySQL** or compatible database
+- **Laravel 12.x**
+- Optional: **Node.js** (for frontend assets if applicable)
 
-- **[Vehikl](https://vehikl.com)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Redberry](https://redberry.international/laravel-development)**
-- **[Active Logic](https://activelogic.com)**
+### ⚙️ Installation
 
-## Contributing
+1. **Clone the repository:**
+   ```bash
+   git clone https://github.com/luqelha/student-affairs.git
+   cd student-affairs
+   ```
+2. **Install dependencies via Composer:**
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+```bash
+composer install
+```
 
-## Code of Conduct
+3. **Copy environment file and configure database:**
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+```bash
+cp .env.example .env
+```
 
-## Security Vulnerabilities
+Lalu isi konfigurasi database kamu di file .env, misalnya:
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+```env
+DB_DATABASE=student_affairs
+DB_USERNAME=root
+DB_PASSWORD=
+```
 
-## License
+4. **Generate application key:**
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+```bash
+php artisan key:generate
+```
+
+5. **Run migrations and seeders:**
+
+```bash
+php artisan migrate --seed
+```
+
+6. **Run the application:**
+
+```bash
+php artisan serve
+```
+
+7. **Access Application in Browser:**
+
+```bash
+http://127.0.0.1:8000.
+```
+
+## 📦 Dependencies
+
+### Main Packages
+
+```json
+"require": {
+  "php": "^8.2",
+  "barryvdh/laravel-dompdf": "^3.1",
+  "laravel/framework": "^12.0",
+  "laravel/tinker": "^2.10.1",
+  "maatwebsite/excel": "^3.1",
+  "phpoffice/phpspreadsheet": "^1.30"
+}
+```
+
+### Development Packages
+
+```json
+"require-dev": {
+  "fakerphp/faker": "^1.23",
+  "laravel/pail": "^1.2.2",
+  "laravel/pint": "^1.24",
+  "laravel/sail": "^1.41",
+  "mockery/mockery": "^1.6",
+  "nunomaduro/collision": "^8.6",
+  "phpunit/phpunit": "^11.5.3"
+}
+```
+
+## 🤝 Contributing
+
+Contributions are welcome!
+If you find a bug or want to improve the system, feel free to open an issue or submit a pull request.
+
+1. Fork the Project
+2. Create your Feature Branch (git checkout -b feature/YourFeature)
+3. Commit your Changes (git commit -m 'Add some YourFeature')
+4. Push to the Branch (git push origin feature/YourFeature)
+5. Open a Pull Request
+
+## 📜 License
+
+Distributed under the MIT License.
