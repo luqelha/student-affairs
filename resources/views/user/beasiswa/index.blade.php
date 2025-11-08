@@ -1,6 +1,6 @@
 @extends('layouts.user')
 
-@section('page-title', 'Daftar Beasiswa')
+@section('page-title', 'Dashboard Beasiswa')
 
 @include('partials.table-styles')
 

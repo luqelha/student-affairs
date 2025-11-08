@@ -293,6 +293,21 @@
         <div class="stat-value">{{ $totalUkm ?? 0 }}</div>
         <div class="stat-label">Anggota UKM</div>
     </div>
+
+    <div class="stat-card">
+        <div class="stat-header">
+            <div class="stat-icon green">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path>
+                    <circle cx="9" cy="7" r="4"></circle>
+                    <line x1="19" y1="8" x2="19" y2="14"></line>
+                    <line x1="16" y1="11" x2="22" y2="11"></line>
+                </svg>
+            </div>
+        </div>
+        <div class="stat-value">{{ $totalUsers ?? 0 }}</div>
+        <div class="stat-label">Total Users</div>
+    </div>
 </div>
 
 <!-- Quick Actions -->
@@ -343,6 +358,21 @@
                 <p>Upload & manage</p>
             </div>
         </a>
+
+        <a href="{{ route('admin.createuser.index') }}" class="action-btn">
+            <div class="action-icon" style="background: linear-gradient(135deg, #48bb78 0%, #38a169 100%);">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path>
+                    <circle cx="9" cy="7" r="4"></circle>
+                    <line x1="19" y1="8" x2="19" y2="14"></line>
+                    <line x1="16" y1="11" x2="22" y2="11"></line>
+                </svg>
+            </div>
+            <div class="action-text">
+                <h4>Kelola User</h4>
+                <p>Create & manage</p>
+            </div>
+        </a>
     </div>
 </div>
 
@@ -362,6 +392,10 @@
             <li>
                 <span>Total data UKM</span>
                 <span class="badge badge-success">{{ $totalUkm ?? 0 }}</span>
+            </li>
+            <li>
+                <span>Total users</span>
+                <span class="badge badge-success">{{ $totalUsers ?? 0 }}</span>
             </li>
         </ul>
     </div>

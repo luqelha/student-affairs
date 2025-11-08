@@ -121,6 +121,28 @@
         </div>
         <form action="{{ route('admin.prestasi.upload') }}" method="POST" enctype="multipart/form-data" id="uploadForm">
             @csrf
+            <div style="margin-bottom: 20px; padding: 16px; background: #e6fffa; border-radius: 8px; border-left: 4px solid #38b2ac;">
+                <div style="display: flex; align-items: center; gap: 12px;">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#38b2ac" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="10"></circle>
+                        <line x1="12" y1="16" x2="12" y2="12"></line>
+                        <line x1="12" y1="8" x2="12.01" y2="8"></line>
+                    </svg>
+                    <div style="flex: 1;">
+                        <p style="color: #234e52; font-weight: 600; margin-bottom: 4px; font-size: 14px;">Belum punya template?</p>
+                        <p style="color: #234e52; font-size: 13px; margin-bottom: 8px;">Download template Excel terlebih dahulu untuk memudahkan upload data.</p>
+                        <a href="{{ route('admin.prestasi.download-template') }}" class="btn btn-secondary" style="padding: 8px 16px; font-size: 13px; display: inline-flex; align-items: center; gap: 8px;">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                                <polyline points="7 10 12 15 17 10"></polyline>
+                                <line x1="12" y1="15" x2="12" y2="3"></line>
+                            </svg>
+                            Download Template Excel
+                        </a>
+                    </div>
+                </div>
+            </div>
+
             <div class="file-upload-area" id="fileUploadArea">
                 <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin: 0 auto 16px; color: #a0aec0;">
                     <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
@@ -142,40 +164,58 @@
     </div>
 </div>
 
-<div class="modal" id="editModal">
+<div class="modal-edit" id="editModal">
     <div class="modal-content" style="max-width: 600px;">
         <div class="modal-header">
-            <h3 class="modal-title">Edit Data Beasiswa</h3>
+            <h3 class="modal-title">Edit Data Prestasi</h3>
         </div>
+
         <form id="editForm" method="POST">
             @csrf
             @method('PUT')
+
             <div class="modal-body">
                 <div class="form-group" style="margin-bottom: 12px;">
                     <label>Nama Mahasiswa</label>
                     <input type="text" name="nama_mahasiswa" id="editNama" class="form-control" required>
                 </div>
+
                 <div class="form-group" style="margin-bottom: 12px;">
                     <label>Email</label>
                     <input type="email" name="email" id="editEmail" class="form-control">
                 </div>
+
                 <div class="form-group" style="margin-bottom: 12px;">
                     <label>NIM</label>
                     <input type="text" name="nim" id="editNim" class="form-control">
                 </div>
+
                 <div class="form-group" style="margin-bottom: 12px;">
-                    <label>Jenis Beasiswa</label>
-                    <input type="text" name="jenis_beasiswa" id="editJenis" class="form-control">
+                    <label>Jenis Prestasi</label>
+                    <input type="text" name="jenis_prestasi" id="editJenisPrestasi" class="form-control" required>
                 </div>
+
                 <div class="form-group" style="margin-bottom: 12px;">
+                    <label>Tingkat</label>
+                    <input type="text" name="tingkat" id="editTingkat" class="form-control" placeholder="Nasional / Internasional / Lokal">
+                </div>
+
+                <div class="form-group" style="margin-bottom: 12px;">
+                    <label>Penyelenggara</label>
+                    <input type="text" name="penyelenggara" id="editPenyelenggara" class="form-control">
+                </div>
+
+                <div class="form-group" style="margin-bottom: 12px;">
+                    <label>Tahun</label>
+                    <input type="text" name="tahun" id="editTahun" class="form-control" placeholder="Contoh: 2024">
+                </div>
+
+                <div class="form-group" style="margin-bottom: 20px;">
                     <label>Jurusan</label>
                     <input type="text" name="jurusan" id="editJurusan" class="form-control">
                 </div>
-                <div class="form-group" style="margin-bottom: 20px;">
-                    <label>Tahun Ajaran</label>
-                    <input type="text" name="tahun_ajaran" id="editTahun" class="form-control">
-                </div>
             </div>
+
             <div class="modal-actions">
                 <button type="button" class="btn btn-secondary" onclick="closeEditModal()">Batal</button>
                 <button type="submit" class="btn btn-success">Simpan</button>
@@ -188,12 +228,15 @@
 
 <script>
     function openEditModal(prestasi) {
-        document.getElementById('editNama').value = prestasi.nama_mahasiswa;
+        document.getElementById('editNama').value = prestasi.nama_mahasiswa || '';
         document.getElementById('editEmail').value = prestasi.email || '';
         document.getElementById('editNim').value = prestasi.nim || '';
-        document.getElementById('editJenis').value = prestasi.jenis_prestasi || '';
-        document.getElementById('editJurusan').value = prestasi.jurusan || '';
+        document.getElementById('editJenisPrestasi').value = prestasi.jenis_prestasi || '';
+        document.getElementById('editTingkat').value = prestasi.tingkat || '';
+        document.getElementById('editPenyelenggara').value = prestasi.penyelenggara || '';
         document.getElementById('editTahun').value = prestasi.tahun || '';
+        document.getElementById('editJurusan').value = prestasi.jurusan || '';
+
         document.getElementById('editForm').action = `/admin/prestasi/${prestasi.id}`;
         document.getElementById('editModal').style.display = 'flex';
     }

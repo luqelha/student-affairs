@@ -1,6 +1,6 @@
 @extends('layouts.user')
 
-@section('page-title', 'Daftar UKM Mahasiswa')
+@section('page-title', 'Dashboard UKM')
 
 @include('partials.table-styles')
 

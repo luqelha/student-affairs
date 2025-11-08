@@ -116,6 +116,28 @@
         </div>
         <form action="{{ route('admin.ukm.upload') }}" method="POST" enctype="multipart/form-data" id="uploadForm">
             @csrf
+            <div style="margin-bottom: 20px; padding: 16px; background: #e6fffa; border-radius: 8px; border-left: 4px solid #38b2ac;">
+                <div style="display: flex; align-items: center; gap: 12px;">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#38b2ac" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="10"></circle>
+                        <line x1="12" y1="16" x2="12" y2="12"></line>
+                        <line x1="12" y1="8" x2="12.01" y2="8"></line>
+                    </svg>
+                    <div style="flex: 1;">
+                        <p style="color: #234e52; font-weight: 600; margin-bottom: 4px; font-size: 14px;">Belum punya template?</p>
+                        <p style="color: #234e52; font-size: 13px; margin-bottom: 8px;">Download template Excel terlebih dahulu untuk memudahkan upload data.</p>
+                        <a href="{{ route('admin.ukm.download-template') }}" class="btn btn-secondary" style="padding: 8px 16px; font-size: 13px; display: inline-flex; align-items: center; gap: 8px;">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                                <polyline points="7 10 12 15 17 10"></polyline>
+                                <line x1="12" y1="15" x2="12" y2="3"></line>
+                            </svg>
+                            Download Template Excel
+                        </a>
+                    </div>
+                </div>
+            </div>
+
             <div class="file-upload-area" id="fileUploadArea">
                 <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin: 0 auto 16px; color: #a0aec0;">
                     <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
@@ -137,40 +159,53 @@
     </div>
 </div>
 
-<div class="modal" id="editModal">
+<div class="modal-edit" id="editModal">
     <div class="modal-content" style="max-width: 600px;">
         <div class="modal-header">
-            <h3 class="modal-title">Edit Data Beasiswa</h3>
+            <h3 class="modal-title">Edit Data UKM</h3>
         </div>
+
         <form id="editForm" method="POST">
             @csrf
             @method('PUT')
+
             <div class="modal-body">
                 <div class="form-group" style="margin-bottom: 12px;">
                     <label>Nama Mahasiswa</label>
                     <input type="text" name="nama_mahasiswa" id="editNama" class="form-control" required>
                 </div>
+
                 <div class="form-group" style="margin-bottom: 12px;">
                     <label>Email</label>
                     <input type="email" name="email" id="editEmail" class="form-control">
                 </div>
+
                 <div class="form-group" style="margin-bottom: 12px;">
                     <label>NIM</label>
                     <input type="text" name="nim" id="editNim" class="form-control">
                 </div>
+
                 <div class="form-group" style="margin-bottom: 12px;">
-                    <label>Jenis Beasiswa</label>
-                    <input type="text" name="jenis_beasiswa" id="editJenis" class="form-control">
+                    <label>Nama UKM</label>
+                    <input type="text" name="nama_ukm" id="editNamaUkm" class="form-control" required>
                 </div>
+
                 <div class="form-group" style="margin-bottom: 12px;">
+                    <label>Posisi / Jabatan</label>
+                    <input type="text" name="posisi" id="editPosisi" class="form-control" placeholder="Contoh: Ketua / Anggota / Sekretaris">
+                </div>
+
+                <div class="form-group" style="margin-bottom: 12px;">
+                    <label>Tahun Bergabung</label>
+                    <input type="text" name="tahun_bergabung" id="editTahunBergabung" class="form-control" placeholder="Contoh: 2023">
+                </div>
+
+                <div class="form-group" style="margin-bottom: 20px;">
                     <label>Jurusan</label>
                     <input type="text" name="jurusan" id="editJurusan" class="form-control">
                 </div>
-                <div class="form-group" style="margin-bottom: 20px;">
-                    <label>Tahun Ajaran</label>
-                    <input type="text" name="tahun_ajaran" id="editTahun" class="form-control">
-                </div>
             </div>
+
             <div class="modal-actions">
                 <button type="button" class="btn btn-secondary" onclick="closeEditModal()">Batal</button>
                 <button type="submit" class="btn btn-success">Simpan</button>
@@ -186,10 +221,11 @@
         document.getElementById('editNama').value = ukm.nama_mahasiswa || '';
         document.getElementById('editEmail').value = ukm.email || '';
         document.getElementById('editNim').value = ukm.nim || '';
-        document.getElementById('editUkm').value = ukm.nama_ukm || '';
+        document.getElementById('editNamaUkm').value = ukm.nama_ukm || '';
         document.getElementById('editPosisi').value = ukm.posisi || '';
-        document.getElementById('editTahun').value = ukm.tahun_bergabung || '';
+        document.getElementById('editTahunBergabung').value = ukm.tahun_bergabung || '';
         document.getElementById('editJurusan').value = ukm.jurusan || '';
+
         document.getElementById('editForm').action = `/admin/ukm/${ukm.id}`;
         document.getElementById('editModal').style.display = 'flex';
     }

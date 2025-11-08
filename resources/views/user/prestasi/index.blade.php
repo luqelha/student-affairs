@@ -1,6 +1,6 @@
 @extends('layouts.user')
 
-@section('page-title', 'Daftar Prestasi')
+@section('page-title', 'Dashboard Prestasi')
 
 @include('partials.table-styles')
 

@@ -11,7 +11,8 @@ use App\Http\Controllers\User\BeasiswaController as UserBeasiswaController;
 use App\Http\Controllers\User\PrestasiController as UserPrestasiController;
 use App\Http\Controllers\User\UkmController as UserUkmController;
 
-// Redirect root to login
+use App\Http\Controllers\Admin\CreateUserController;
+
 Route::get('/', function () {
     return redirect()->route('login');
 });
@@ -32,6 +33,7 @@ Route::middleware(['auth', 'admin'])->prefix('admin')->name('admin.')->group(fun
     Route::get('/beasiswa', [AdminBeasiswaController::class, 'index'])->name('beasiswa.index');
     Route::post('/beasiswa/upload', [AdminBeasiswaController::class, 'upload'])->name('beasiswa.upload');
     Route::get('/beasiswa/download-pdf', [AdminBeasiswaController::class, 'downloadPdf'])->name('beasiswa.download-pdf');
+    Route::get('/beasiswa/download-template', [AdminBeasiswaController::class, 'downloadTemplate'])->name('beasiswa.download-template');
     Route::put('/beasiswa/{id}', [AdminBeasiswaController::class, 'update'])->name('beasiswa.update');
     Route::delete('/beasiswa/{id}', [AdminBeasiswaController::class, 'destroy'])->name('beasiswa.destroy');
     
@@ -39,6 +41,7 @@ Route::middleware(['auth', 'admin'])->prefix('admin')->name('admin.')->group(fun
     Route::get('/prestasi', [AdminPrestasiController::class, 'index'])->name('prestasi.index');
     Route::post('/prestasi/upload', [AdminPrestasiController::class, 'upload'])->name('prestasi.upload');
     Route::get('/prestasi/download-pdf', [AdminPrestasiController::class, 'downloadPdf'])->name('prestasi.download-pdf');
+    Route::get('/prestasi/download-template', [AdminPrestasiController::class, 'downloadTemplate'])->name('prestasi.download-template');
     Route::put('/prestasi/{id}', [AdminPrestasiController::class, 'update'])->name('prestasi.update');
     Route::delete('/prestasi/{id}', [AdminPrestasiController::class, 'destroy'])->name('prestasi.destroy');
     
@@ -46,8 +49,15 @@ Route::middleware(['auth', 'admin'])->prefix('admin')->name('admin.')->group(fun
     Route::get('/ukm', [AdminUkmController::class, 'index'])->name('ukm.index');
     Route::post('/ukm/upload', [AdminUkmController::class, 'upload'])->name('ukm.upload');
     Route::get('/ukm/download-pdf', [AdminUkmController::class, 'downloadPdf'])->name('ukm.download-pdf');
+    Route::get('/ukm/download-template', [AdminUkmController::class, 'downloadTemplate'])->name('ukm.download-template');
     Route::put('/ukm/{id}', [AdminUkmController::class, 'update'])->name('ukm.update');
     Route::delete('/ukm/{id}', [AdminUkmController::class, 'destroy'])->name('ukm.destroy');
+    
+    // Create User
+    Route::get('/createuser', [CreateUserController::class, 'index'])->name('createuser.index');
+    Route::post('/createuser', [CreateUserController::class, 'store'])->name('createuser.store');
+    Route::put('/createuser/{id}', [CreateUserController::class, 'update'])->name('createuser.update');
+    Route::delete('/createuser/{id}', [CreateUserController::class, 'destroy'])->name('createuser.destroy');
 });
 
 // User Routes - PERHATIKAN INI! Pakai Controller User, bukan Admin

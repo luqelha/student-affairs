@@ -18,8 +18,6 @@ class Prestasi extends Model
         'penyelenggara',
         'tahun',
         'jurusan',
-        'role',
-        'status'
     ];
 
     protected $casts = [

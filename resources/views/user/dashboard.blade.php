@@ -1,6 +1,6 @@
 @extends('layouts.user')
 
-@section('page-title', 'Dashboard Mahasiswa')
+@section('page-title', 'Dashboard User')
 
 @push('styles')
 <style>

@@ -34,6 +34,7 @@
 - **🎓 Scholarship Management:** Admins can manage, approve, and monitor student scholarship applications.
 - **🏆 Achievements:** Record and track student academic and non-academic achievements.
 - **🎯 Student Activities (UKM):** Manage student organizations and extracurricular participation.
+- **👤 User Management:** Admins can create, edit, and delete user accounts with role-based access control.
 - **📄 Export & Reporting:**
   - Export data to **PDF** and **Excel** using `barryvdh/laravel-dompdf` and `maatwebsite/excel`.
   - Supports bulk data import/export via **PhpSpreadsheet**.
@@ -51,7 +52,6 @@ Follow these steps to set up the project locally for development and testing.
 - **Composer** installed
 - **MySQL** or compatible database
 - **Laravel 12.x**
-- Optional: **Node.js** (for frontend assets if applicable)
 
 ### ⚙️ Installation
 
